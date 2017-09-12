@@ -1,0 +1,13 @@
+<div class="wrapper">
+    <div class="sidebar" data-background-color="white" data-active-color="danger" *ngIf="!HideSidebar == true">
+        <sidebar-cmp></sidebar-cmp>
+    </div>
+    <div class="main-panel" [ngClass]="{'main-panel':!HideSidebar}">
+        <navbar-cmp *ngIf="!HideSidebar == true"></navbar-cmp>
+        <div [ngClass]="{'content':!HideSidebar}">
+            <router-outlet></router-outlet>
+        </div>
+        <footer-cmp *ngIf="!HideSidebar == true"></footer-cmp>
+    </div>
+</div>
+<fixedplugin-cmp></fixedplugin-cmp>
